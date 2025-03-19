@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Employee Management System (EMS)
 
-## Getting Started
+## 📌 Overview
+The **Employee Management System (EMS)** is a full-stack web application that allows an organization to efficiently manage employee records, including adding, updating, deleting, and viewing employee details. It is built using **Next.js**, **Tailwind CSS**, **Java Spring Boot**, and **MySQL**.
 
-First, run the development server:
+## 🛠 Technologies Used
+### Frontend:
+- Next.js
+- Tailwind CSS
+- React Toastify (for success messages)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Backend:
+- Java Spring Boot
+- JPA (Java Persistence API)
+- MySQL Database
+- Email Service (for notifications and authentication)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Authentication & Security:
+- Email & OTP Verification (Java Spring Boot)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Features
+✅ **Admin Panel** - Manage employees efficiently with an intuitive dashboard.  
+✅ **User Authentication** - Secure login & registration with email verification.  
+✅ **Employee Management** - Add, update, delete, and view employees.  
+✅ **Graphical Reports** - View employee statistics using charts.  
+✅ **Responsive UI** - Fully optimized for mobile and desktop.  
+✅ **React Toastify** - Display success messages upon actions.  
+✅ **Email Service** - Send notifications and verification emails.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📥 Installation & Setup
+### 1️⃣ Backend Setup (Spring Boot & MySQL)
+1. Open the backend folder in an IDE (IntelliJ/VS Code/Eclipse).
+2. Configure **application.properties** with your MySQL credentials:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/ems_db
+   spring.datasource.username=root
+   spring.datasource.password=yourpassword
+   ```
+3. Run the Spring Boot application:
+   ```sh
+   mvn spring-boot:run
+   ```
 
-## Learn More
+### 2️⃣ Frontend Setup (Next.js & Tailwind CSS)
+1. Navigate to the frontend directory:
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the Next.js development server:
+   ```sh
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 API Endpoints
+| Endpoint                 | Method | Description                    |
+|--------------------------|--------|--------------------------------|
+| `/api/register`          | POST   | Register a new user           |
+| `/api/login`             | POST   | Authenticate user login       |
+| `/api/employees`         | GET    | Get all employees             |
+| `/api/employees/{id}`    | GET    | Get a single employee         |
+| `/api/employees`         | POST   | Add a new employee            |
+| `/api/employees/{id}`    | PUT    | Update employee details       |
+| `/api/employees/{id}`    | DELETE | Remove an employee            |
+| `/api/email/send`        | POST   | Send an email notification    |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💡 Contributing
+Feel free to contribute! Fork the repository, create a new branch, and submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📞 Contact
+For any queries, contact **[Rushi Lahane](https://github.com/Rushi-Lahane)**.
 
-## Deploy on Vercel
+---
+🚀 Happy Coding! 🎯
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
