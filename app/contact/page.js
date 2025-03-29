@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 function Page() {
     const onSubmit = async (event) => {
@@ -24,13 +25,36 @@ function Page() {
         if (res.success) {
             console.log("Success", res);
             event.target.reset();
+            toast.success("Thank You For Connecting With Us.", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                style: { backgroundColor: "#4CAF50", color: "#fff", fontWeight: "bold" }
+            });
         } else {
             console.error("Error", res);
+            toast.error("Failed to send email. Try again! ❌", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                style: { backgroundColor: "#4CAF50", color: "#fff", fontWeight: "bold" }
+            });
         }
     };
 
     return (
-        <div className="container mx-auto py-20 px-6">
+        <div className="container mx-auto py-20 px-6 mt-10">
+            <ToastContainer />
             <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
             <p className="text-lg mb-6 text-center max-w-2xl mx-auto">
                 We’re here to help! If you have any questions, feedback, or need assistance, please fill out the form below or reach out to us directly.
@@ -81,7 +105,7 @@ function Page() {
                 <p className="text-lg mb-2">📞 Phone: <a href="tel:+91 9860483122" className="text-blue-600 underline">+91 9860483122</a></p>
                 <p className="text-lg mb-2">🏢 Address: ch. Sambhajinagar , Maharashtra</p>
                 <p className="text-lg mb-2">🕒 Business Hours: Mon-Fri, 9 AM - 5 PM</p>
-                <p className="text-lg mb-2">🌐 Website: <a href="https://www.ems.com" className="text-blue-600 underline">www.ems.com</a></p>
+                <p className="text-lg mb-2">🌐 Website: <a href="https://www" className="text-blue-600 underline">www.ems.com</a></p>
             </div>
         </div>
     );

@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+body {
+    @apply bg-gray-200
+}
+
+button {
+    @apply cursor-pointer active:bg-amber-300
+}
